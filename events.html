@@ -11,6 +11,58 @@
     <!-- CSS here -->
     <link rel="stylesheet" href="assets/css/events.css">
     <link rel="stylesheet" href="assets/css/upcomingevents.css">
+    <style>
+        /* Flexbox layout for nav to center all items */
+        nav {
+            display: flex;
+            align-items: center;  /* Center items vertically */
+            justify-content: center;  /* Center items horizontally */
+            gap: 15px;  /* Space between the items */
+            list-style: none;  /* Remove default list style */
+        }
+
+        /* Style the <a> links inside the nav */
+        nav a {
+            text-decoration: none;
+            color: #000;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        /* Styling for the dropdown menu (submenu) */
+        .nav-item {
+            position: relative;
+        }
+
+        .submenu {
+            display: none;  /* Hide submenu by default */
+            position: absolute;
+            background-color: #fff;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            min-width: 200px;
+            z-index: 1;
+            list-style-type: none;
+            margin: 0;
+            padding: 10px;
+        }
+
+        .submenu li a {
+            color: #000;
+            padding: 5px 10px;
+            display: block;
+        }
+
+        /* Show submenu when hovering over the parent */
+        .nav-item:hover .submenu {
+            display: block;
+        }
+
+        /* Optional: Add some hover effect for the nav links */
+        nav a:hover {
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -18,7 +70,19 @@
         <p>Your gateway to the most exciting events of the year!</p>
         <nav>
             <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contributors.html">Contributors</a>
             <a href="upcomingevents.html">Upcoming Events</a>
+
+            <!-- Resources dropdown -->
+            <div class="nav-item">
+                <a href="#" class="menu-link">Resources</a>
+                <ul class="submenu">
+                    <li><a href="pyqs.html">Academic Materials</a></li>
+                    <li><a href="stuff.html">Interesting Stuff</a></li>
+                    <li><a href="online_stuff.html">Projects and Tutorials</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
 
@@ -98,7 +162,7 @@
             events.forEach(event => {
                 const imageDiv = document.createElement("div");
                 imageDiv.classList.add("gallery-image");
-                imageDiv.style.backgroundImage = `url(${event.image})`;
+                imageDiv.style.backgroundImage = `url(${event.image})`;  <!-- Corrected backgroundImage syntax -->
                 gallery.appendChild(imageDiv);
             });
         }
