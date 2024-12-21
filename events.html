@@ -3,66 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Communique</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Communique Events</title>
     <link rel="manifest" href="site.webmanifest">
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
-    <!-- CSS here -->
-    <link rel="stylesheet" href="assets/css/events.css">
+   <!-- CSS here -->
+   
+   <link rel="stylesheet" href="assets/css/events.css">
     <link rel="stylesheet" href="assets/css/upcomingevents.css">
-    <style>
-        /* Flexbox layout for nav to center all items */
-        nav {
-            display: flex;
-            align-items: center;  /* Center items vertically */
-            justify-content: center;  /* Center items horizontally */
-            gap: 15px;  /* Space between the items */
-            list-style: none;  /* Remove default list style */
-        }
 
-        /* Style the <a> links inside the nav */
-        nav a {
-            text-decoration: none;
-            color: #000;
-            padding: 10px;
-            font-weight: bold;
-        }
-
-        /* Styling for the dropdown menu (submenu) */
-        .nav-item {
-            position: relative;
-        }
-
-        .submenu {
-            display: none;  /* Hide submenu by default */
-            position: absolute;
-            background-color: #fff;
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-            min-width: 200px;
-            z-index: 1;
-            list-style-type: none;
-            margin: 0;
-            padding: 10px;
-        }
-
-        .submenu li a {
-            color: #000;
-            padding: 5px 10px;
-            display: block;
-        }
-
-        /* Show submenu when hovering over the parent */
-        .nav-item:hover .submenu {
-            display: block;
-        }
-
-        /* Optional: Add some hover effect for the nav links */
-        nav a:hover {
-            background-color: #f0f0f0;
-            border-radius: 5px;
-        }
-    </style>
+    
 </head>
 <body>
     <header>
@@ -73,22 +22,8 @@
             <a href="about.html">About</a>
             <a href="contributors.html">Contributors</a>
             <a href="upcomingevents.html">Upcoming Events</a>
-
-            <!-- Resources dropdown -->
-            <div class="nav-item">
-                <a href="#" class="menu-link">Resources</a>
-                <ul class="submenu">
-                    <li><a href="pyqs.html">Academic Materials</a></li>
-                    <li><a href="Cheatsheets.html">Interesting Stuff</a></li>
-                    <li><a href="Projects&Tutorials.html">Projects and Tutorials</a></li>
-                </ul>
-            </div>
         </nav>
     </header>
-
-    <section class="quote">
-        "A great event isn't measured by how many people show up, but by how much they remember it."
-    </section>
 
     <section id="events" class="timeline-section">
         <div class="timeline-header">
@@ -100,7 +35,9 @@
 
     <section class="gallery">
         <h2>Event Highlights</h2>
-        <div class="gallery-images" id="gallery"></div>
+        <div class="gallery-scroll">
+            <div class="gallery-container" id="gallery"></div>
+        </div>
     </section>
 
     <footer>
@@ -110,34 +47,61 @@
     <script>
         const events = [
             {
-                date: "January 15, 2024",
-                title: "Tech Conference 2024",
-                description: "Join us for networking, workshops, and talks by industry leaders.",
-                image: "https://via.placeholder.com/300x200?text=Tech+Conference"
+                date: "December , 2024",
+                title: "IETE X Communique",
+                description: "Beyond Boundaries: The Ultimate Cricket Showdown!",
+                images: [
+                    "https://lh3.googleusercontent.com/pw/AP1GczNW74DVuGEgZEa5IoPON1smJnx4UjfTK8_Ds8_aJ2YE6XUWalyKDu2OZKmYLeOQ1iXi_R_c58BLluYUiTTPx8lI_yfGLkKdbz5YGZ2PEjeclh4uOW4xkIVNtdjj1iNJAjwHNfrfYBF3gyqILsRN2uG2=w1384-h923-s-no-gm?authuser=0",
+                    "https://lh3.googleusercontent.com/pw/AP1GczPRXW54yYro3amKHK3y1RH4GRM3JiJ2VaC2Yurfp1m_BSvlDe2c2-y40YnejaobZlSUB9f1bsOc0MyqVe-E07BX-NrKP0p8gP7Jrz0nN0KitpDKyQ7P6PxBCUJPxxre9GF1oRTnYLUbUJ6GWGZMSpmS=w1384-h923-s-no-gm?authuser=0",
+                    "https://lh3.googleusercontent.com/pw/AP1GczNMdHb_4pGOZuorME1L1-Q-d8siPkF5II-cPfuiBhqR70e328S5qWyjGw6U9UE-brYWDOBIBK8ZXKKqWQH07C6bQo_zoIxsEPfjNrTZnUvCUxYENfCfT5c0_PJywy28TvS-sBGTAUQW5p7-pHXxcK3u=w1384-h923-s-no-gm?authuser=0"
+                    
+                ]
             },
             {
-                date: "February 10, 2024",
-                title: "Art & Design Expo",
+                date: "February 10, 2023",
+                title: "EKATRA 2023",
                 description: "Explore creative works and participate in hands-on design activities.",
-                image: "https://via.placeholder.com/300x200?text=Art+Expo"
+                images: [
+                    "https://imagekit.io/tools/asset-public-link?detail=%7B%22name%22%3A%22078d348d-eb64-4389-bd58-94a83963ab6b.jpg%22%2C%22type%22%3A%22image%2Fjpeg%22%2C%22signedurl_expire%22%3A%222024-12-21T17%3A12%3A23.591Z%22%2C%22signedUrl%22%3A%22https%3A%2F%2Fmedia-hosting.imagekit.io%2F%2F120837efcba6468b%2F078d348d-eb64-4389-bd58-94a83963ab6b.jpg%3FExpires%3D1734801144%26Key-Pair-Id%3DK2ZIVPTIP2VGHC%26Signature%3DeyLS3PZB9q5emrbEL7U4QPD0SdNqSuGQ1tB9iers-k~RkvIM~rvjMfx0MXTddO8uhRHWtcveHuepmbgMh1MXDlM22yPecYAf6w5yH07bVAJX9N4rSFvQuDrCusT1OMrWm2u6Lcg2H7517JQ9tt7nEsDO36wMkNdhUfx2ErZC0JbQFQYCYZcF2-M46CKIJUqqAk-yJ0zIWPAHBnY634eBnc4zO0Vcf1oTom8Y5D9DBKv43lvfWsMZv1vJiGw2cFqB3PWSuzjzecUPk33kv9rMgfq4fBolTB~bvrNv15O3P6xJkntPNFcONPyx9NR1sAjysFm5Carr~Igl86QKsxjjdw__%22%7D",
+                    "https://imagekit.io/tools/asset-public-link?detail=%7B%22name%22%3A%2220d9dbcc-a0ec-4558-a745-6310f75a81e4.jpg%22%2C%22type%22%3A%22image%2Fjpeg%22%2C%22signedurl_expire%22%3A%222024-12-21T17%3A11%3A27.768Z%22%2C%22signedUrl%22%3A%22https%3A%2F%2Fmedia-hosting.imagekit.io%2F%2F709db520e1db4ad5%2F20d9dbcc-a0ec-4558-a745-6310f75a81e4.jpg%3FExpires%3D1734801088%26Key-Pair-Id%3DK2ZIVPTIP2VGHC%26Signature%3DGXS3LUuCJpfvOsmbGwcoQshUwWZ2lAYaMuayiy2auq0imb49k4xpSvDRQu~fj9Sr9Vfvns-U2t7ABipEufwLhK-dEu8R0tSut8qlpKd93nOhWGiszLpsVagmQwVjzes3aqMC~FUHN06Tws8iExBpNDE03meDw~d2mFOxkjVm4-VnIxcd6aB2-EgyDPKgXjPT1by063fxwf~OmKmLbd5EUpscl5qN9znEt7yNfAJ5EZcJN1L1-5Swq2OTth4GtC1lfTkyj4hJXG3XF0CtHlMQ~WBRNIqvrqJ-0j~bIebw79Ih4EW9gQoUA740Lt2HMluHBItFXhqM2pXCg1hTmzZ8FA__%22%7D",
+                    "https://imagekit.io/tools/asset-public-link?detail=%7B%22name%22%3A%2279e23f7c-557d-4229-81f2-17089fb47f92.jpg%22%2C%22type%22%3A%22image%2Fjpeg%22%2C%22signedurl_expire%22%3A%222024-12-21T17%3A12%3A51.538Z%22%2C%22signedUrl%22%3A%22https%3A%2F%2Fmedia-hosting.imagekit.io%2F%2Fc40d791de0ba4264%2F79e23f7c-557d-4229-81f2-17089fb47f92.jpg%3FExpires%3D1734801172%26Key-Pair-Id%3DK2ZIVPTIP2VGHC%26Signature%3DPiaUwE0PtOEx0g-CdxEp4pOut8HhS~twddCoIqioWYlH9YbE~mE62qQSULfPiwFwkGQ2TTDdNY7kORXVEKOhqW-b5CZTlJ0ClOZHp4dYL7yee3j8zZfErfqMFP-wChE1iIFYhwoxWpzHOQ1bTABM7YZ53H7TAXARZ~MrKpMNCGnYRnpnPVFl-r1wwOYwkm2m6GtxqstPeN7yJUaCzaaJI2NV6qc9K9ov91RBXFl3krmZkcHsEbCaxqwScv5grboWutmM9izdprezw31ar7ssHPHH0dSpTD9v14CBQ62TrG1T12UXVkee2xhtITRPm7mz9czs~05kgVIu2j4dIVP6hA__%22%7D"
+                ]
             },
             {
                 date: "March 5, 2024",
                 title: "Health & Wellness Retreat",
                 description: "Recharge with yoga sessions, mindfulness workshops, and more.",
-                image: "https://via.placeholder.com/300x200?text=Wellness+Retreat"
+                images: [
+                    "https://via.placeholder.com/200x150?text=Wellness+1",
+                    "https://via.placeholder.com/200x150?text=Wellness+2",
+                    "https://via.placeholder.com/200x150?text=Wellness+3"
+                    
+                ]
             },
             {
                 date: "April 20, 2024",
                 title: "Spring Startup Summit",
                 description: "Pitch your startup and connect with investors and mentors.",
-                image: "https://via.placeholder.com/300x200?text=Startup+Summit"
+                images: [
+                    "https://via.placeholder.com/200x150?text=Startup+1",
+                    "https://via.placeholder.com/200x150?text=Startup+2",
+                    "https://via.placeholder.com/200x150?text=Startup+3"
+                ]
             },
+            {
+                date: "April 20, 2024",
+                title: "Spring Startup Summit",
+                description: "Pitch your startup and connect with investors and mentors.",
+                images: [
+                    "https://via.placeholder.com/200x150?text=Startup+1",
+                    "https://via.placeholder.com/200x150?text=Startup+2",
+                    "https://via.placeholder.com/200x150?text=Startup+3"
+                ]
+            }
         ];
 
         function renderTimeline() {
             const timeline = document.getElementById("timeline");
-            timeline.innerHTML = "";
 
             events.forEach((event, index) => {
                 const timelineItem = document.createElement("div");
@@ -146,7 +110,23 @@
                     <p class="timeline-date">${event.date}</p>
                     <h2 class="timeline-title">${event.title}</h2>
                     <p class="timeline-description">${event.description}</p>
+                    <div class="event-images" id="event-images-${index}"></div>
                 `;
+
+                timelineItem.addEventListener("click", () => {
+                    const eventImages = document.getElementById(`event-images-${index}`);
+                    eventImages.innerHTML = "";
+
+                    event.images.forEach(imageUrl => {
+                        const imageDiv = document.createElement("div");
+                        imageDiv.classList.add("event-image");
+                        imageDiv.style.backgroundImage = `url(${imageUrl})`;
+                        eventImages.appendChild(imageDiv);
+                    });
+
+                    eventImages.classList.toggle("visible");
+                });
+
                 timeline.appendChild(timelineItem);
 
                 setTimeout(() => {
@@ -155,17 +135,45 @@
             });
         }
 
-        function renderGallery() {
+        /*function renderGallery() {
             const gallery = document.getElementById("gallery");
             gallery.innerHTML = "";
 
-            events.forEach(event => {
+            const loopedEvents = [...events, ...events]; // Duplicate for seamless scroll
+
+            loopedEvents.forEach(event => {
                 const imageDiv = document.createElement("div");
                 imageDiv.classList.add("gallery-image");
-                imageDiv.style.backgroundImage = `url(${event.image})`;  <!-- Corrected backgroundImage syntax -->
+                imageDiv.style.backgroundImage = `url(${event.image})`;
+
+                const infoDiv = document.createElement("div");
+                infoDiv.classList.add("gallery-info");
+                infoDiv.textContent = `${event.title} - ${event.date}`;
+
+                imageDiv.appendChild(infoDiv);
                 gallery.appendChild(imageDiv);
             });
-        }
+        }*/
+        function renderGallery() {
+    const gallery = document.getElementById("gallery");
+    gallery.innerHTML = "";
+
+    events.forEach(event => {
+        event.images.forEach(imageUrl => {
+            const imageDiv = document.createElement("div");
+            imageDiv.classList.add("gallery-image");
+            imageDiv.style.backgroundImage = `url(${imageUrl})`;
+
+            const infoDiv = document.createElement("div");
+            infoDiv.classList.add("gallery-info");
+            infoDiv.textContent = `${event.title} - ${event.date}`;
+
+            imageDiv.appendChild(infoDiv);
+            gallery.appendChild(imageDiv);
+        });
+    });
+}
+
 
         document.addEventListener("DOMContentLoaded", () => {
             renderTimeline();
