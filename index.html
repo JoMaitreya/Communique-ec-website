@@ -1,14 +1,16 @@
-<!doctype html>
-<html class="no-js" lang="zxx">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Communique</title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Communique - ECE Department</title>
     <link rel="manifest" href="site.webmanifest">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
-
+    
     <!-- CSS here -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
@@ -26,43 +28,511 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/Nav.css">
     
-    
-</head>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans', sans-serif;
+            scroll-behavior: smooth;
+           background:rgb(255, 255, 255);
+        }
+        /* Reset Margin and Padding for All Elements */
 
+
+        header::after, .parallax::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Adjust opacity here */
+    z-index: 1;
+    pointer-events: none;
+}
+
+header, .parallax {
+    position: relative;
+    z-index: 0; /* Ensure text appears above the overlay */
+}
+
+header h1, header p {
+    position: relative;
+    z-index: 2; /* Ensure text appears above the overlay */
+}
+
+        header {
+            position: relative;
+            height: 100vh;
+            background: url('assets/img/department-photo.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            animation: fadeIn 2s ease-out;
+        }
+
+        header h1, header p {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideIn 1s forwards;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1.2px;
+}
+
+header h1 {
+    font-size: 5rem;
+    font-family: 'Poppins', sans-serif;
+    z-index: 2;
+    font-weight: 600;
+}
+
+header p {
+    font-size: 1.5rem;
+    font-family: 'Open Sans', sans-serif;
+    z-index: 2;
+    font-weight: 400;
+    line-height: 1.6;
+    animation: fadeInUp 2s ease;
+}
+
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .parallax {
+            background: url('assets/img/department-photo.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            position: relative;
+            z-index: -1;
+            animation: scrollBackground 8s linear infinite;
+        }
+
+        @keyframes scrollBackground {
+            0% { background-position: 0 0; }
+            100% { background-position: 0 100%; }
+        }
+
+        section {
+            padding: 50px;
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        .scroll-background {
+            background: url('assets/img/department-photo1.jpg') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            transition: background 1s ease-in-out;
+        }
+
+        .scroll-background:nth-child(odd) {
+            background: url('assets/img/department-photo2.jpg') no-repeat center center/cover;
+        }
+
+        .scroll-background h2 {
+            color: white;
+            margin: 0;
+            padding-top: 30%;
+            font-size: 3rem;
+            font-family: 'Poppins', sans-serif;
+            animation: slideIn 1s forwards;
+        }
+
+        .footer-section {
+    padding: 60px 40px;
+    background: rgb(123, 69, 247);
+    color: white;
+    text-align: center;
+}
+
+.footer-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.footer-column h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-column p, .footer-column ul {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin: 10px 0;
+}
+
+.footer-column ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+    text-decoration: underline;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    color: white;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #007bff;
+}
+
+.footer-text {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+        .feedback-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 50%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 1.5rem;
+    animation: bounce 1.5s infinite;
+    transition: transform 0.3s ease;
+}
+
+.feedback-button:hover {
+    transform: translateY(-10px);
+}
+
+.feedback-button a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feedback-button i {
+    margin-right: 5px;
+}
+
+
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+
+        /* Form Styles */
+        .feedback-form {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            width: 300px;
+            z-index: 1000;
+            animation: slideUp 0.5s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        .creative-section {
+    padding: 60px 20px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/img/background-feature.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+}
+
+.creative-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.feature-card i {
+    font-size: 3rem;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+}
+
+.feature-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #ddd;
+}
+
+@media (max-width: 768px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+        .feedback-form input, .feedback-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #007bff;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            animation: fadeInUp 2s forwards;
+        }
+
+        .content-text {
+            font-size: 1.2rem;
+            color: #333;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .video-container {
+            margin-top: 50px;
+            animation: fadeInUp 2s forwards;
+        }
+        .courses-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.course-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.course-card h3 {
+    font-size: 1.5rem;
+    color: #007bff;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.course-card p {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.6;
+    font-family: 'Open Sans', sans-serif;
+}
+
+@media (max-width: 768px) {
+    .courses-container {
+        grid-template-columns: 1fr;
+    }
+}
+.contact-section {
+    padding: 60px 20px;
+    background: #f8f9fa;
+    text-align: center;
+}
+
+.contact-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.contact-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.contact-card i {
+    font-size: 3rem;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.contact-card h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.contact-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+.contact-card a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.contact-card a:hover {
+    text-decoration: underline;
+}
+
+.feedback-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.feedback-link:hover {
+    background-color: #0056b3;
+}
+
+
+
+    </style>
+</head>
 <body>
-    <!-- ? Preloader Start -->
-    <div id="preloader-active">
-        <div class="preloader d-flex align-items-center justify-content-center">
-            <div class="preloader-inner position-relative">
-                <div class="preloader-circle"></div>
-                <div class="preloader-img pere-text">
-                    <img src="assets/img/logo/loder.png" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Preloader Start -->
+
     <header>
-        <!-- Header Start -->
+        <h1>Communique Students' Society</h1>
+        <p>Electronics and Communication Engineering</p>
         <div class="header-area header-transparent">
-            <div class="main-header ">
-                <div class="header-bottom  header-sticky">
+            <div class="main-header">
+                <div class="header-bottom header-sticky">
                     <div class="container-fluid">
                         <div class="row align-items-center">
-                            <!-- Logo -->
                             <div class="col-xl-2 col-lg-2">
                                 <div class="logo">
-                                    
                                     <img style="height: 12rem; margin-bottom: 0.5rem; max-width: 22rem; padding: 0.6rem;" src="assets/img/gallery/Communique_webs.png" alt="CommuniCore">
                                 </div>
                             </div>
                             <div class="col-xl-10 col-lg-10">
                                 <div class="menu-wrapper d-flex align-items-center justify-content-end">
-                                    <!-- Main-menu -->
                                     <div class="main-menu d-none d-lg-block">
-                                        <nav  class="navi">
-                                            <ul id="navigation">                                                                                          
-                                                <li class="active" ><a href="index.html">Home</a></li>
+                                        <nav class="navi">
+                                            <ul id="navigation">
+                                                <li class="active"><a href="index.html">Home</a></li>
                                                 <li><a href="Achievements.html">ECE</a></li>
                                                 <li><a href="about.html">About</a></li>
                                                 <li><a href="events.html">Events</a></li>
@@ -71,376 +541,388 @@
                                                         <li><a href="pyqs.html">Academic Materials</a></li>
                                                         <li><a href="Cheatsheets.html">Interesting Stuff</a></li>
                                                         <li><a href="Projects&Tutorials.html">Projects and Tutorials</a></li>
-                                                        
                                                     </ul>
                                                 </li>
-                                                
                                                 <li><a href="contributors.html">Contributors</a></li>
-                                                <!-- Button -->
-                                               
-                                                <!-- <li class="button-header"><a href="login.html" class="btn btn3">Feedback</a></li> -->
                                             </ul>
                                         </nav>
                                     </div>
                                 </div>
-                            </div> 
-                            <!-- Mobile Menu -->
-                            <div class="col-12">
-                                <div class="mobile_menu d-block d-lg-none"></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Header End -->
     </header>
-    <main>
-        <!--? slider Area Start-->
-        <section class="slider-area ">
-            <div class="slider-active">
-                <!-- Single Slider -->
-                <div class="single-slider slider-height d-flex align-items-center">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xl-6 col-lg-7 col-md-12">
-                                <div class="hero__caption">
-                                    <h1 data-animation="fadeInLeft" data-delay="0.2s">Advance your<br> Career</h1>
-                                    <p data-animation="fadeInLeft" data-delay="0.4s">Achieve Your Educational Goals with Our Support and Resources.</p>
-                                    <a href="Feedback.html" class="btn hero-btn" data-animation="fadeInLeft" data-delay="0.7s" target="_blank">Your Valuable Feedback</a>
+    
+
+<div class="parallax"></div>
+<section id="innovations" class="creative-section">
+    <div class="container">
+        <h2 class="section-title">Innovations & Features</h2>
+        <p class="content-text">Explore the cutting-edge innovations and unique features we bring to enhance your learning experience.</p>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-microchip"></i>
+                <h3>AI-Powered Learning</h3>
+                <p>Experience personalized learning paths with our AI-driven recommendations and smart insights.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-lightbulb"></i>
+                <h3>Innovation Hub</h3>
+                <p>Join our hub for ideation, prototyping, and transforming concepts into real-world applications.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-users"></i>
+                <h3>Collaborative Projects</h3>
+                <p>Work together on projects with peers, fostering collaboration and collective learning.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-rocket"></i>
+                <h3>Startup Incubator</h3>
+                <p>Get mentorship and resources to turn your innovative ideas into successful startups.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about">
+    <h2 class="section-title">What is Communique?</h2>
+    <p class="content-text">Communique is an initiative to promote innovation, collaboration, and technical excellence within the Electronics and Communication Engineering department. We organize events, workshops, and provide resources for skill development.</p>
+</section>
+
+<section id="core-team">
+    <h2 class="section-title">Meet the Core Team</h2>
+    <div class="video-container">
+        <video width="800" controls autoplay muted>
+            <source src="assets/img/CoreTeam.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</section>
+<!-- Courses area start -->
+<div class="courses-area section-padding40 fix">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-7 col-lg-8">
+                <div class="section-tittle text-center mb-55">
+                    <h2>Achieve Success with Top-Rated Courses</h2>
+                </div>
+            </div>
+        </div>
+        <div class="courses-actives">
+            <!-- Single -->
+            <div class="properties pb-20">
+                <div class="properties__card">
+                    <div class="properties__img overlay1">
+                        <a href="https://www.youtube.com/watch?v=yGB9jhsEsr8"><img src="https://w0.peakpx.com/wallpaper/451/1006/HD-wallpaper-c-plus-plus-metal-logo-grunge-programming-language-signs-blue-metal-background-c-plus-plus-creative-programming-language-c-plus-plus-logo-thumbnail.jpg" alt=""></a>
+                    </div>
+                    <div class="properties__caption">
+                        <p>c++</p>
+                        <h3><a href="https://www.youtube.com/watch?v=yGB9jhsEsr8" target="_blank">C++ Tutorial For Beginners: Learn C Plus Plus In Hindi.</a></h3>
+                        <p>This C ++ Tutorial will make coding in C++ easy for you. You will realize how easy C++ language is!.</p>
+                        </p>
+                        <div class="properties__footer d-flex justify-content-between align-items-center">
+                            <div class="restaurant-name">
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half"></i>
                                 </div>
+                                <p><span>(4.5)</span> </p>
                             </div>
+                            
                         </div>
-                    </div>          
+                        <a href="https://www.youtube.com/watch?v=j8nAHeVKL08&list=PLu0W_9lII9agpFUAlPFe_VNSlXW5uE0YL" target="_blank" class="border-btn border-btn2">Find out more</a>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Single -->
+            <!-- Single -->
+            <div class="properties pb-20">
+                <div class="properties__card">
+                    <div class="properties__img overlay1">
+                        <a href="https://www.youtube.com/watch?v=rfscVS0vtbw"><img src="https://w0.peakpx.com/wallpaper/214/166/HD-wallpaper-python-metal-logo-grunge-programming-language-signs-blue-metal-background-python-creative-programming-language-python-logo.jpg" alt=""></a>
+                    </div>
+                    <div class="properties__caption">
+                        <p>Python</p>
+                        <h3><a href="https://www.youtube.com/watch?v=rfscVS0vtbw" target="_blank">Learn Python - Full Course for Beginners [Tutorial]</a></h3>
+                        <p>This course will give you a full introduction into all of the core concepts in python. Follow along with the videos and you'll be a python programmer in no time! </p>
+                        <div class="properties__footer d-flex justify-content-between align-items-center">
+                            <div class="restaurant-name">
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half"></i>
+                                </div>
+                                <p><span>(4.5)</span></p>
+                            </div>
+                            
+                        </div>
+                        <a href="https://www.youtube.com/watch?v=vLqTf2b6GZw" class="border-btn border-btn2" target="_blank">Find out more</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Single -->
+            <!-- Single -->
+            <div class="properties pb-20">
+                <div class="properties__card">
+                    <div class="properties__img overlay1">
+                        <a href="https://www.youtube.com/watch?v=UmnCZ7-9yDY"><img src="https://wallpapercave.com/wp/wp6599912.jpg" alt=""></a>
+                    </div>
+                    <div class="properties__caption">
+                        <p>Java</p>
+                        <h3><a href="https://www.youtube.com/watch?v=UmnCZ7-9yDY" target="_blank">Java Tutorial for Beginners | Learn Java in 2 Hours</a></h3>
+                        <p> This Java tutorial for beginners will teach you java programming from scratch. This complete java course will help you master all the concepts you need to learn in Java.
+                        </p>
+                        <div class="properties__footer d-flex justify-content-between align-items-center">
+                            <div class="restaurant-name">
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half"></i>
+                                </div>
+                                <p><span>(4.5)</span></p>
+                            </div>
+                           
+                        </div>
+                        <a href="https://www.youtube.com/watch?v=ntLJmHOJ0ME&list=PLu0W_9lII9agS67Uits0UnJyrYiXhDS6q" target="_blank" class="border-btn border-btn2">Find out more</a>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Single -->
+            <!-- Single -->
+            <div class="properties pb-20">
+                <div class="properties__card">
+                    <div class="properties__img overlay1">
+                        <a href="https://youtube.com/playlist?list=PLTjRvDozrdlw5En5v2xrBr_EqieHf7hGs"><img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20201111215809/How-to-Become-a-Front-End-Developer-in-2020.png" alt=""></a>
+                    </div>
+                    <div class="properties__caption">
+                        <p>Frontened Development</p>                              
+                        <h3><a href="https://youtube.com/playlist?list=PLTjRvDozrdlw5En5v2xrBr_EqieHf7hGs" target="_blank">Introduction to HTML, CSS, JavaScript & How websites work?</a></h3>
+
+                        <p>The Complete Web Development Course Project in Hindi in one video using HTML CSS JAVASCRIPT BOOTSTRAP 4,  REAL-TIME API, NODE JS, EXPRESS JS, and many more advanced topics in just one video to understand and create a complete dynamic responsive website.
+                        </p>
+                        <div class="properties__footer d-flex justify-content-between align-items-center">
+                            <div class="restaurant-name">
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half"></i>
+                                </div>
+                                <p><span>(4.5)</span></p>
+                            </div>
+                            
+                        </div>
+                        <a href="https://www.youtube.com/watch?v=DiVxOfUEbfk&list=PLwGdqUZWnOp0t1YdY2ut9pgA3tqXv64Z3" class="border-btn border-btn2" target="_blank">Find out more</a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="properties pb-20">
+                <div class="properties__card">
+                    <div class="properties__img overlay1">
+                        <a href="https://youtube.com/playlist?list=PLt5mNkGuWcuVa4GNEsDbH5L6ONaIMsbMa"><img src="https://www.keycdn.com/img/support/full-stack-development.png" alt=""></a>
+                    </div>
+                    <div class="properties__caption">
+                        <p>Full stack Development</p>                       
+                        <h3><a href="https://youtube.com/playlist?list=PLt5mNkGuWcuVa4GNEsDbH5L6ONaIMsbMa" target="_blank">FULL STACK WEB DEVELOPMENT COURSE 2022</a></h3>
+
+                        <p>This is full Stack Web Development Course for Absolute Beginners 2022. A 22 hour video covering all the major topics of web development. Become a full-stack web developer from this complete course from scratch for mastering web development
+                        </p>
+                        <div class="properties__footer d-flex justify-content-between align-items-center">
+                            <div class="restaurant-name">
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half"></i>
+                                </div>
+                                <p><span>(4.5)</span></p>
+                            </div>
+                            
+                        </div>
+                        <a href="https://www.youtube.com/watch?v=ZxKM3DCV2kE&list=WL&index=90&t=10250s" class="border-btn border-btn2" target="_blank">Find out more</a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="properties pb-20">
+                <div class="properties__card">
+                    <div class="properties__img overlay1">
+                        <a href="https://www.youtube.com/watch?v=onbBV0uFVpo&t=0s"><img src="https://cdn.acodez.in/wp-content/uploads/2019/08/History-of-javascript.jpg" alt=""></a>
+                    </div>
+                    <div class="properties__caption">
+                        <p>Javascript</p>
+                        <h3><a href="https://www.youtube.com/watch?v=onbBV0uFVpo&t=0s" target="_blank">JavaScript Tutorial</a></h3>
+                        <p>Though one video is not enough to learn everything about JavaScript, this video is enough to get the basic idea of JavaScript programming language.
+                        </p>
+                        <div class="properties__footer d-flex justify-content-between align-items-center">
+                            <div class="restaurant-name">
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half"></i>
+                                </div>
+                                <p><span>(4.5)</span></p>
+                            </div>
+                            
+                        </div>
+                        <a href="https://www.youtube.com/watch?v=hKB-YGF14SY" class="border-btn border-btn2" target="_blank">Find out more</a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="properties pb-20">
+                <div class="properties__card">
+                    <div class="properties__img overlay1">
+                        <a href="https://www.youtube.com/watch?v=c9Wg6Cb_YlU&t=1998s"><img src="https://edicos.de/wp-content/uploads/UI-UX-Design.jpg" alt=""></a>
+                    </div>
+                    <div class="properties__caption">
+                        <p>Ui/Ux</p>
+                        <h3><a href="https://www.youtube.com/watch?v=c9Wg6Cb_YlU&t=1998s" target="_blank">UI / UX Design Tutorial – Wireframe, Mockup & Design in Figma</a></h3>
+                        <p>Learn the process of UI / UX design.  In this tutorial you will learn how a professional designer builds a full website design from scratch.</p>
+                        <div class="properties__footer d-flex justify-content-between align-items-center">
+                            <div class="restaurant-name">
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half"></i>
+                                </div>
+                                <p><span>(4.5)</span></p>
+                            </div>
+                            
+                        </div>
+                        <a href="https://www.youtube.com/watch?v=c9Wg6Cb_YlU&t=1998s" class="border-btn border-btn2" target="_blank">Find out more</a>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Single -->
+        </div>
+
+
+
+
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2 class="section-title">Contact Us</h2>
+                <p class="content-text">We'd love to hear from you! Reach out for more information, questions, or collaborations.</p>
+                
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email Us</h3>
+                        <p>Contact us at <a href="mailto:ec_communique@rknec.edu">ec_communique@rknec.edu</a></p>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fas fa-phone"></i>
+                        <h3>Call Us</h3>
+                        <p>+1 234 567 890</p>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Visit Us</h3>
+                        <p>Ramdeobaba University, Nagpur City</p>
+                    </div>
                 </div>
             </div>
         </section>
-        <!-- ? services-area -->
-        <div class="services-area">
+        
+        <footer class="footer-section">
             <div class="container">
-                <div class="row justify-content-sm-center">
-                    <div class="col-lg-4 col-md-6 col-sm-8">
-                        <div class="single-services mb-30">
-                            <div class="features-icon">
-                                <img src="assets/img/icon/icon1.svg" alt="">
-                            </div>
-                            <div class="features-caption">
-                               
-                                <p>Empower Your Learning with Our Wide Range of Courses</p>
-                            </div>
-                        </div>
+                <div class="footer-grid">
+                    <div class="footer-column">
+                        <h3>About Us</h3>
+                        <p>Communique is dedicated to fostering innovation and excellence in the field of Electronics and Communication Engineering.</p>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-sm-8">
-                        <div class="single-services mb-30">
-                            <div class="features-icon">
-                                <img src="assets/img/icon/icon2.svg" alt="">
-                            </div>
-                            <div class="features-caption">
-                                
-                                <p>Get the Education You Need to Thrive in Your Career</p>
-                            </div>
-                        </div>
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="events.html">Events</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-sm-8">
-                        <div class="single-services mb-30">
-                            <div class="features-icon">
-                                <img src="assets/img/icon/icon3.svg" alt="">
-                            </div>
-                            <div class="features-caption">
-                               
-                                <p>Transform Your Future with the Resources.</p>
-                            </div>
+                    <div class="footer-column">
+                        <h3>Follow Us</h3>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                 </div>
+                <p class="footer-text">© 2024 Communique Department | All Rights Reserved.</p>
             </div>
-        </div>
-        <!-- Courses area start -->
-        <div class="courses-area section-padding40 fix">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-xl-7 col-lg-8">
-                        <div class="section-tittle text-center mb-55">
-                            <h2>Achieve Success with Top-Rated Courses</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="courses-actives">
-                    <!-- Single -->
-                    <div class="properties pb-20">
-                        <div class="properties__card">
-                            <div class="properties__img overlay1">
-                                <a href="https://www.youtube.com/watch?v=yGB9jhsEsr8"><img src="https://w0.peakpx.com/wallpaper/451/1006/HD-wallpaper-c-plus-plus-metal-logo-grunge-programming-language-signs-blue-metal-background-c-plus-plus-creative-programming-language-c-plus-plus-logo-thumbnail.jpg" alt=""></a>
-                            </div>
-                            <div class="properties__caption">
-                                <p>c++</p>
-                                <h3><a href="https://www.youtube.com/watch?v=yGB9jhsEsr8" target="_blank">C++ Tutorial For Beginners: Learn C Plus Plus In Hindi.</a></h3>
-                                <p>This C ++ Tutorial will make coding in C++ easy for you. You will realize how easy C++ language is!.</p>
-                                </p>
-                                <div class="properties__footer d-flex justify-content-between align-items-center">
-                                    <div class="restaurant-name">
-                                        <div class="rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star-half"></i>
-                                        </div>
-                                        <p><span>(4.5)</span> </p>
-                                    </div>
-                                    
-                                </div>
-                                <a href="https://www.youtube.com/watch?v=j8nAHeVKL08&list=PLu0W_9lII9agpFUAlPFe_VNSlXW5uE0YL" target="_blank" class="border-btn border-btn2">Find out more</a>
-                            </div>
+        </footer>
+        
+ 
 
-                        </div>
-                    </div>
-                    <!-- Single -->
-                    <!-- Single -->
-                    <div class="properties pb-20">
-                        <div class="properties__card">
-                            <div class="properties__img overlay1">
-                                <a href="https://www.youtube.com/watch?v=rfscVS0vtbw"><img src="https://w0.peakpx.com/wallpaper/214/166/HD-wallpaper-python-metal-logo-grunge-programming-language-signs-blue-metal-background-python-creative-programming-language-python-logo.jpg" alt=""></a>
-                            </div>
-                            <div class="properties__caption">
-                                <p>Python</p>
-                                <h3><a href="https://www.youtube.com/watch?v=rfscVS0vtbw" target="_blank">Learn Python - Full Course for Beginners [Tutorial]</a></h3>
-                                <p>This course will give you a full introduction into all of the core concepts in python. Follow along with the videos and you'll be a python programmer in no time! </p>
-                                <div class="properties__footer d-flex justify-content-between align-items-center">
-                                    <div class="restaurant-name">
-                                        <div class="rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star-half"></i>
-                                        </div>
-                                        <p><span>(4.5)</span></p>
-                                    </div>
-                                    
-                                </div>
-                                <a href="https://www.youtube.com/watch?v=vLqTf2b6GZw" class="border-btn border-btn2" target="_blank">Find out more</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Single -->
-                    <!-- Single -->
-                    <div class="properties pb-20">
-                        <div class="properties__card">
-                            <div class="properties__img overlay1">
-                                <a href="https://www.youtube.com/watch?v=UmnCZ7-9yDY"><img src="https://wallpapercave.com/wp/wp6599912.jpg" alt=""></a>
-                            </div>
-                            <div class="properties__caption">
-                                <p>Java</p>
-                                <h3><a href="https://www.youtube.com/watch?v=UmnCZ7-9yDY" target="_blank">Java Tutorial for Beginners | Learn Java in 2 Hours</a></h3>
-                                <p> This Java tutorial for beginners will teach you java programming from scratch. This complete java course will help you master all the concepts you need to learn in Java.
-                                </p>
-                                <div class="properties__footer d-flex justify-content-between align-items-center">
-                                    <div class="restaurant-name">
-                                        <div class="rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star-half"></i>
-                                        </div>
-                                        <p><span>(4.5)</span></p>
-                                    </div>
-                                   
-                                </div>
-                                <a href="https://www.youtube.com/watch?v=ntLJmHOJ0ME&list=PLu0W_9lII9agS67Uits0UnJyrYiXhDS6q" target="_blank" class="border-btn border-btn2">Find out more</a>
-                            </div>
 
-                        </div>
-                    </div>
-                    <!-- Single -->
-                    <!-- Single -->
-                    <div class="properties pb-20">
-                        <div class="properties__card">
-                            <div class="properties__img overlay1">
-                                <a href="https://youtube.com/playlist?list=PLTjRvDozrdlw5En5v2xrBr_EqieHf7hGs"><img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20201111215809/How-to-Become-a-Front-End-Developer-in-2020.png" alt=""></a>
-                            </div>
-                            <div class="properties__caption">
-                                <p>Frontened Development</p>                              
-                                <h3><a href="https://youtube.com/playlist?list=PLTjRvDozrdlw5En5v2xrBr_EqieHf7hGs" target="_blank">Introduction to HTML, CSS, JavaScript & How websites work?</a></h3>
-
-                                <p>The Complete Web Development Course Project in Hindi in one video using HTML CSS JAVASCRIPT BOOTSTRAP 4,  REAL-TIME API, NODE JS, EXPRESS JS, and many more advanced topics in just one video to understand and create a complete dynamic responsive website.
-                                </p>
-                                <div class="properties__footer d-flex justify-content-between align-items-center">
-                                    <div class="restaurant-name">
-                                        <div class="rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star-half"></i>
-                                        </div>
-                                        <p><span>(4.5)</span></p>
-                                    </div>
-                                    
-                                </div>
-                                <a href="https://www.youtube.com/watch?v=DiVxOfUEbfk&list=PLwGdqUZWnOp0t1YdY2ut9pgA3tqXv64Z3" class="border-btn border-btn2" target="_blank">Find out more</a>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="properties pb-20">
-                        <div class="properties__card">
-                            <div class="properties__img overlay1">
-                                <a href="https://youtube.com/playlist?list=PLt5mNkGuWcuVa4GNEsDbH5L6ONaIMsbMa"><img src="https://www.keycdn.com/img/support/full-stack-development.png" alt=""></a>
-                            </div>
-                            <div class="properties__caption">
-                                <p>Full stack Development</p>                       
-                                <h3><a href="https://youtube.com/playlist?list=PLt5mNkGuWcuVa4GNEsDbH5L6ONaIMsbMa" target="_blank">FULL STACK WEB DEVELOPMENT COURSE 2022</a></h3>
-
-                                <p>This is full Stack Web Development Course for Absolute Beginners 2022. A 22 hour video covering all the major topics of web development. Become a full-stack web developer from this complete course from scratch for mastering web development
-                                </p>
-                                <div class="properties__footer d-flex justify-content-between align-items-center">
-                                    <div class="restaurant-name">
-                                        <div class="rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star-half"></i>
-                                        </div>
-                                        <p><span>(4.5)</span></p>
-                                    </div>
-                                    
-                                </div>
-                                <a href="https://www.youtube.com/watch?v=ZxKM3DCV2kE&list=WL&index=90&t=10250s" class="border-btn border-btn2" target="_blank">Find out more</a>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="properties pb-20">
-                        <div class="properties__card">
-                            <div class="properties__img overlay1">
-                                <a href="https://www.youtube.com/watch?v=onbBV0uFVpo&t=0s"><img src="https://cdn.acodez.in/wp-content/uploads/2019/08/History-of-javascript.jpg" alt=""></a>
-                            </div>
-                            <div class="properties__caption">
-                                <p>Javascript</p>
-                                <h3><a href="https://www.youtube.com/watch?v=onbBV0uFVpo&t=0s" target="_blank">JavaScript Tutorial</a></h3>
-                                <p>Though one video is not enough to learn everything about JavaScript, this video is enough to get the basic idea of JavaScript programming language.
-                                </p>
-                                <div class="properties__footer d-flex justify-content-between align-items-center">
-                                    <div class="restaurant-name">
-                                        <div class="rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star-half"></i>
-                                        </div>
-                                        <p><span>(4.5)</span></p>
-                                    </div>
-                                    
-                                </div>
-                                <a href="https://www.youtube.com/watch?v=hKB-YGF14SY" class="border-btn border-btn2" target="_blank">Find out more</a>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="properties pb-20">
-                        <div class="properties__card">
-                            <div class="properties__img overlay1">
-                                <a href="https://www.youtube.com/watch?v=c9Wg6Cb_YlU&t=1998s"><img src="https://edicos.de/wp-content/uploads/UI-UX-Design.jpg" alt=""></a>
-                            </div>
-                            <div class="properties__caption">
-                                <p>Ui/Ux</p>
-                                <h3><a href="https://www.youtube.com/watch?v=c9Wg6Cb_YlU&t=1998s" target="_blank">UI / UX Design Tutorial – Wireframe, Mockup & Design in Figma</a></h3>
-                                <p>Learn the process of UI / UX design.  In this tutorial you will learn how a professional designer builds a full website design from scratch.</p>
-                                <div class="properties__footer d-flex justify-content-between align-items-center">
-                                    <div class="restaurant-name">
-                                        <div class="rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star-half"></i>
-                                        </div>
-                                        <p><span>(4.5)</span></p>
-                                    </div>
-                                    
-                                </div>
-                                <a href="https://www.youtube.com/watch?v=c9Wg6Cb_YlU&t=1998s" class="border-btn border-btn2" target="_blank">Find out more</a>
-                            </div>
-
-                        </div>
-                    </div>
-                    <!-- Single -->
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-xl-7 col-lg-8">
-                        <div class="section-tittle text-center mt-40">
-                            <a href="stuff.html" class="border-btn" >Want Quick Revision with Best Cheatsheets?</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-            </main>
-    <footer>
-     <div class="footer-wrappper footer-bg">
-        <!-- Footer Start-->
-        <div class="footer-area footer-padding">
-            <div class="container">
-                <div class="row justify-content-between">
-                    <div class="col-xl-4 col-lg-5 col-md-4 col-sm-6">
-                        <div class="single-footer-caption mb-50">
-                            <div class="single-footer-caption mb-30">
-                                <!-- logo -->
-                                <div class="footer-logo mb-25">
-                                    <img style="height: 8rem;" src="assets/img/gallery/Communique_webs.png" alt="">
-                                </div>
-                                <div class="footer-tittle">
-                                    <div class="footer-pera">
-                                        <p>Join a Community of Lifelong Learners with Our Online Programs</p>
-                                    </div>
-                                </div>                              
-                               
-                            </div>
-                        </div>
-                    </div>
-                    
-                    
-                    
-                    <div class="row"></div>
-                    <div class="contact-form padd_side_15">
-                        <h3 style="margin-left: 0.8rem;">DISCLAIMER</h3>
-                        <br>
-                        <div  style="max-width:58.5rem; color: rgb(239, 239, 239); font-size: 1.3rem;margin-bottom: 1rem; margin-right: 0.95rem; margin-left:0.8rem ;">We strive to acknowledge and credit all resources, materials, and inspirations utilized in building our website. Some images, text, or external resources featured here are used under fair use for educational purposes, and we do not claim ownership unless explicitly stated. Should you find any content that needs correction or removal, please contact us directly, and we will promptly address your concerns.</div>
-                        <div  style="max-width:58.5rem; color: rgb(239, 239, 239); font-size: 1.3rem;margin-bottom: 1rem; margin-right: 0.95rem; margin-left:0.8rem ;">Thank you for being part of our community! </div>
-                    </div>
-                </div>
-                </div>
-            </div>
-        </div>
-        <!-- footer-bottom area -->
-        <div class="footer-bottom-area">
-            <div class="container">
-                <div class="footer-border">
-                    <div class="row d-flex align-items-center">
-                        <div class="col-xl-12 ">
-                            <div class="footer-copy-right text-center">
-                               
-                                <h4>Copyright ©2024 All rights reserved. 
-                                </h4>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <!-- Footer End-->
-      </div>
-  </footer> 
-  <!-- Scroll Up -->
-  <div id="back-top" >
-    <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+<!-- Feedback Button -->
+<!-- Feedback Button -->
+<div class="feedback-button">
+    <a href="feedback.html" target="_blank" class="feedback-link">
+        <i class="fas fa-comment"></i> Feedback
+    </a>
 </div>
 
+
+<!-- Feedback Form -->
+<!-- Main Page -->
+
+
+
+<script>
+    
+    // Change background images dynamically (optional)
+    let backgrounds = ['assets/img/department-photo.jpg', 'assets/img/department-photo1.jpg', 'assets/img/department-photo2.jpg'];
+    let header = document.querySelector('header');
+    let index = 0;
+
+    setInterval(() => {
+        index = (index + 1) % backgrounds.length;
+        header.style.backgroundImage = `url('${backgrounds[index]}')`;
+    }, 5000);
+    // Toggle Feedback Form
+    const feedbackButton = document.querySelector('.feedback-button');
+    const feedbackForm = document.querySelector('.feedback-form');
+
+    feedbackButton.addEventListener('click', () => {
+        feedbackForm.style.display = feedbackForm.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Handle Form Submission
+    document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('name').value;
+        const feedback = document.getElementById('feedback').value;
+
+        alert(`Thank you for your feedback, ${name}!\n\nFeedback: ${feedback}`);
+        feedbackForm.style.display = 'none';
+    });
+    
+</script>
 <!-- JS here -->
 <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
 <!-- Jquery, Popper, Bootstrap -->
