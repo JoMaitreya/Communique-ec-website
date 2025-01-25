@@ -7,6 +7,9 @@
     <title>Communique</title>
     <link rel="stylesheet" href="assets/css/feedback.css">
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 </head>
 <body>
     <div class="container">
@@ -184,6 +187,13 @@
         })
         
       </script>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            AOS.init({
+                once: false, // Animations will repeat if the element is scrolled back into view
+            });
+        });
+    </script>
       
 
 

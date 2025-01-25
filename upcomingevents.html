@@ -11,6 +11,9 @@
     <!-- CSS here -->
     <link rel="stylesheet" href="assets/css/events.css">
     <link rel="stylesheet" href="assets/css/upcomingevents.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 </head>
 <body>
     <header>
@@ -102,6 +105,13 @@
 
         // Initialize Page
         document.addEventListener("DOMContentLoaded", renderUpcomingEvents);
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            AOS.init({
+                once: false, // Animations will repeat if the element is scrolled back into view
+            });
+        });
     </script>
 </body>
 </html>

@@ -9,6 +9,9 @@
     <!-- CSS here -->
     <link rel="stylesheet" href="assets/css/events.css">
     <link rel="stylesheet" href="assets/css/upcomingevents.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 </head>
 <body>
     <header>
@@ -17,6 +20,7 @@
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
+            <a href="photography.html">Achievements</a>
             <a href="contributors.html">Contributors</a>
             <a href="upcomingevents.html">Upcoming Events</a>
         </nav>
@@ -169,6 +173,13 @@
         document.addEventListener("DOMContentLoaded", () => {
             renderTimeline();
             renderGallery();
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            AOS.init({
+                once: false, // Animations will repeat if the element is scrolled back into view
+            });
         });
     </script>
 </body>
