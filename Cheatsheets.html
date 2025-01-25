@@ -28,6 +28,9 @@
     <link rel="stylesheet" href="assets/css/stuff.css">
     <link rel="stylesheet" href="assets/css/Nav.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
 
     
 </head>
@@ -67,6 +70,7 @@
                                                 <li class="active" ><a href="index.html">Home</a></li>
                                                 
                                                 <li><a href="about.html">About</a></li>
+                                                <li><a href="photography.html">Achievements</a></li>
                                                 <li><a href="events.html">Events</a></li>
                                                 <li><a href="#">Resources</a>
                                                     <ul class="submenu">
@@ -413,6 +417,14 @@
 
      <!-- Get in Touch -->
     <script src="./assets/js/getintouch.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            AOS.init({
+                once: false, // Animations will repeat if the element is scrolled back into view
+            });
+        });
+    </script>
     
 </body>
 </html>

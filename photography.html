@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECE Achievements & Events</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    
+    <!-- AOS CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Communique Events</title>
+    <link rel="manifest" href="site.webmanifest">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <!-- CSS here -->
+    <link rel="stylesheet" href="assets/css/events.css">
+    <link rel="stylesheet" href="assets/css/upcomingevents.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 30px;
+            background-color: #5A8DEE; /* Soft blue */
+            color: white;
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            color: #fbf4f4;
+            letter-spacing: 2px;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        header p {
+            font-size: 1.5rem;
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #F7F7FD; /* Light lavender */
+        }
+
+        .gallery-section h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: #a574c2; /* Vibrant blue */
+        }
+
+        .gallery {
+        column-count: 3; /* Create a masonry layout */
+        column-gap: 15px;
+        max-width: 1200px;
+        margin: 0 auto;
+        }
+
+        .gallery-card {
+        display: inline-block;
+        margin-bottom: 15px;
+        border-radius: 10px;
+        overflow: hidden;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease-in-out;
+        position: relative;
+        break-inside: avoid; /* Prevent splitting cards between columns */
+        }
+
+        .gallery-card:hover {
+        transform: translateY(-15px) scale(1.05); /* Enhanced hover effect */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .gallery-card:hover img {
+            transform: scale(1.1); /* Slightly zooms in the image */
+        }
+
+        .gallery-card img {
+        position: relative;
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.3s ease-in-out;
+        }
+
+        .gallery-card .img:hover .opacity {
+        opacity: 1;
+        }
+
+        .card-text {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            opacity: 0; /* Hidden initially */
+            transition: opacity 0.3s ease-in-out; /* Smooth fade-in effect */
+            box-sizing: border-box;
+        }
+
+
+        .gallery-card:hover .card-text {
+            opacity: 1;
+        }
+
+        .card-text h3, .card-text p {
+            margin: 0;
+            max-width: 80%; /* Restricts the text to 80% of the image width */
+            word-wrap: break-word; /* Ensures long text wraps within the container */
+            line-height: 1.4; /* Improves readability */
+            font-size: 1.5rem;
+        }
+
+        .gallery-card .opacity h4 {
+            color: #fff;
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .gallery-card .opacity span {
+            color: #ddd;
+            font-size: 1rem;
+        }
+
+        .gallery-card a {
+            color: white; /* Keeps the text white */
+            text-decoration: none; /* Removes underline from the link */
+        }
+
+        .gallery-card a:visited {
+            color: white; /* Ensures visited links also stay white */
+        }
+
+        .gallery-card a:hover {
+            color: lightgray; /* Optional: Changes the color slightly on hover */
+        }
+
+        /* Ongoing Highlights Section */
+        .scrolling-photos {
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            padding: 15px;
+            background-color: #FFEFD5; /* Light peach */
+        }
+
+        .scrolling-photos h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #D2691E; /* Chocolate */
+            margin-bottom: 20px;
+        }
+
+        .scrolling-photos .photo-track {
+            display: flex;
+            animation: scroll 15s linear infinite;
+        }
+
+        .scrolling-photos img {
+            display: inline-block;
+            height: 200px; /* Fixed height */
+            margin-right: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            object-fit: contain;
+            object-position: center;
+        }
+
+        @keyframes scroll {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #4E73DF; /* Vibrant blue */
+            color: white;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 3rem;
+            }
+
+
+            .gallery-section h2, .scrolling-photos h2 {
+                font-size: 2rem;
+            }
+
+            .gallery {
+            column-count: 2;
+            }
+
+            .gallery-card {
+                transform: none; /* Disable hover scale on mobile */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery {
+                column-count: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1> <i>The Essence of ECE!</i></h1>
+        <p>Unveiling the stories of success, creativity, and unity</p>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contributors.html">Contributors</a>
+            <a href="upcomingevents.html">Upcoming Events</a>
+        </nav>
+    </header>
+
+    <section class="gallery-section">
+        <h2 data-aos="fade-up">Photo Gallery</h2>
+        <div class="gallery">
+            <div class="gallery-card" data-aos="zoom-in">
+                <img src="assets\img\Pranay Tondhare.jpg" alt="Event 2">
+                <div class="card-text">
+                <a href="assets\img\Pranay Tondhare.jpg" target="_blank">
+                    <h4>Pranay Tondhare</h4>
+                </a>
+                    <span>Secured 1st position at state level Badminton tournament.</span>
+                </div>
+            </div>
+            <div class="gallery-card" data-aos="zoom-in">
+                <img src="assets\img\Sarah.jpeg" alt="Event 2">
+            <div class="card-text">
+                <a href="assets\img\Sarah.jpeg" target="_blank">
+                <h4>Sarah Farooqui</h4>
+            </a>
+             <span>Represented India and won a gold medal in 7th South Asian SQAY Championship 2023 held at Nepal</span>
+            </div>
+        </div>
+            <div class="gallery-card" data-aos="zoom-in">
+                <img src="assets\img\Maithili Khuje 2nd.jpeg" alt="Event 3">
+                <div class="card-text">
+                    <a href="assets\img\Maithili Khuje 2nd.jpeg" target="_blank">
+                    <h4>Maithili Khuje</h4>
+                </a>
+                    <span>DNC chess winner</span>
+                </div>
+            </div>
+            
+            <div class="gallery-card" data-aos="zoom-in">
+                    <img src="assets\img\Pranay Tondhare 2nd.png" alt="Event 2">
+                <div class="card-text">
+                    <a href="assets\img\Pranay Tondhare 2nd.png" target="_blank">
+                    <h4>Pranay Tondhare</h4>
+                </a>
+                    <span>Secured 1st position at District level Badminton tournament.</span>
+                </div>
+            </div>
+            <div class="gallery-card" data-aos="zoom-in">
+                <img src="assets\img\Mahek Harwani.jpeg" alt="Event 1">
+                <div class="card-text">
+                    <a href="assets\img\Mahek Harwani.jpeg" target="_blank">
+                    <h4>Mahek Harwani</h4>
+                </a>
+                    <span>3rd Position in the RTMNU Inter-collegiate Shooting Tournament, Air Pistol women's category for RBU</span>
+                </div>
+            </div>
+            <div class="gallery-card" data-aos="zoom-in">
+                <img src="assets\img\Maithili khuje 1st.jpeg" alt="Event 2">
+                <div class="card-text">
+                    <a href="assets\img\Maithili khuje 1st.jpeg" target="_blank">
+                    <h4>Maithili Khuje</h4>
+                </a>
+                    <span>Intercollegiate chess championship winner</span>
+                </div>
+            </div>
+            
+            <div class="gallery-card" data-aos="zoom-in">
+                <img src="assets\img\Maithili Khuje 3rd.jpeg" alt="Event 3">
+                <div class="card-text">
+                    <a href="assets\img\Maithili Khuje 3rd.jpeg" target="_blank">
+                    <h4>Maithili Khuje</h4>
+                </a>
+                    <span>West zone chess intercollegiate winner</span>
+                </div>
+            </div>
+            <div class="gallery-card" data-aos="zoom-in">
+                <img src="assets\img\Aryan 1.jpeg" alt="Event 3">
+                <div class="card-text">
+                    <a href="assets\img\Aryan 1.jpeg" target="_blank">
+                    <h4>Aryan Deogade</h4>
+                </a>
+                    <span>Represented RTMNU at All India Inter University Chess Championship</span>
+                </div>
+            </div>
+            <div class="gallery-card" data-aos="zoom-in">
+                <img src="assets\img\Maithili Khuje 4th.jpeg" alt="Event 4">
+                <div class="card-text">
+                    <a href="assets\img\Maithili Khuje 4th.jpeg" target="_blank">
+                    <h4>Maithili Khuje</h4>
+                </a>
+                    <span>National level chess intercollegiate tournament</span>
+                </div>
+            </div>
+            <div class="gallery-card" data-aos="zoom-in">
+                <img src="assets\img\Mahek Harwani.jpeg" alt="Event 1">
+                <div class="card-text">
+                    <a href="assets\img\Mahek Harwani.jpeg" target="_blank">
+                    <h4>Mahek Harwani</h4>
+                </a>
+                    <span>Secured 3rd Position in the RTMNU Inter-collegiate Shooting Tournament, Air Pistol women's category for RBU</span>
+                </div>
+            </div>
+            <div class="gallery-card" data-aos="zoom-in">
+                <img src="assets\img\Kumaril Borkute.jpeg" alt="Event 2">
+                <div class="card-text">
+                    <a href="assets\img\Kumaril Borkute.jpeg" target="_blank">
+                    <h4>Kumaril Borkute</h4>
+                </a>
+                    <span>Runner up in national level project competition organised by JD college</span>
+                </div>
+            </div>
+            <div class="gallery-card" data-aos="zoom-in">
+                <img src="assets\img\Ansh Shahu.jpeg" alt="Event 3">
+                <div class="card-text">
+                    <a href="assets\img\Ansh Shahu.jpeg" target="_blank">
+                    <h4>Ansh Shahu</h4>
+                </a>
+                    <span>Represented ramdeobaba college as well as RTMNU university at all India level shooting championship, Meerut</span>
+                </div>
+            </div>
+            <div class="gallery-card" data-aos="zoom-in">
+                <img src="assets\img\Shraddha Allewar 1st.jpeg" alt="Event 2">
+                <div class="card-text">
+                    <a href="assets\img\Shraddha Allewar 1st.jpeg" target="_blank">
+                    <h4>Shraddha Allewar</h4>
+                </a>
+                    <span>Secured 3rd position in KIO(Karate India Organization) Nationals tournament.</span>
+                </div>
+            </div>
+            <div class="gallery-card" data-aos="zoom-in">
+                <img src="assets\img\Shraddha Allewar 2nd.jpeg" alt="Event 2">
+                <div class="card-text">
+                    <a href="assets\img\Shraddha Allewar 2nd.jpeg" target="_blank">
+                    <h4>Shraddha Allewar</h4>
+                </a>
+                    <span>Won championship at khasdar krida mohotsav 2024</span>
+                </div>
+            </div>
+            <div class="gallery-card" data-aos="zoom-in">
+                <img src="assets\img\Shraddha Allewar and Sejal Chandrakar.jpg" alt="Event 2">
+                <div class="card-text">
+                    <a href="assets\img\Shraddha Allewar and Sejal Chandrakar.jpg" target="_blank">
+                    <h4>Shraddha Allewar and Sejal Chandrakar</h4>
+                </a>
+                    <span>Secured 1st place and have received 10K cash price at national level hackathon in Toycothan at Axis'24 organised by VNIT college Nagpur.</span>
+                </div>
+            </div>
+            <div class="gallery-card" data-aos="zoom-in">
+                <img src="assets\img\Aryan Deogade 1st.jpeg" alt="Event 2">
+                <div class="card-text">
+                    <a href="assets\img\Aryan Deogade 1st.jpeg" target="_blank">
+                    <h4>Aryan Deogade</h4>
+                </a>
+                    <span>Runner Up at Run-neeti Cricket Tournament.</span>
+                </div>
+            </div>
+            <div class="gallery-card" data-aos="zoom-in">
+                <img src="assets\img\Aryan Deogade 2nd.jpeg" alt="Event 2">
+                <div class="card-text">
+                    <a href="assets\img\Aryan Deogade 2nd.jpeg" target="_blank">
+                    <h4>Aryan Deogade</h4>
+                </a>
+                    <span>RTMNU inter-collegiate chess champion 2023</span>
+                </div>
+            </div>
+            <div class="gallery-card" data-aos="zoom-in">
+                <img src="assets\img\Aryan Deogade 3rd.jpeg" alt="Event 2">
+                <div class="card-text">
+                    <a href="assets\img\Aryan Deogade 3rd.jpeg" target="_blank">
+                    <h4>Aryan Deogade</h4>
+                </a>
+                    <span>RTMNU inter-collegiate Chess Champion 2024</span>
+                </div>
+            </div>
+            <div class="gallery-card" data-aos="zoom-in">
+                <img src="assets\img\Aryan Deogade 4th.jpeg" alt="Event 2">
+                <div class="card-text">
+                    <a href="assets\img\Aryan Deogade 4th.jpeg" target="_blank">
+                    <h4>Aryan Deogade</h4>
+                </a>
+                    <span>DNC Chess Tournament Champion and 4th board prize winner</span>
+                </div>
+            </div>
+            <div class="gallery-card" data-aos="zoom-in">
+                <img src="assets\img\Gayatri Sen and Rutuja Karemore.jpeg" alt="Event 4">
+                <div class="card-text">
+                    <a href="assets\img\Gayatri Sen and Rutuja Karemore.jpeg" target="_blank">
+                    <h4>Gayatri Sen and Rutuja Karemore</h4>
+                </a>
+                    <span>Won first prize on tech talk at MRSAC Nagpur</span>
+                </div>
+            </div>
+            <div class="gallery-card" data-aos="zoom-in">
+                <img src="assets\img\Aryan Deogade 5th.jpeg" alt="Event 2">
+                <div class="card-text">
+                    <a href="assets\img\Aryan Deogade 5th.jpeg" target="_blank">
+                    <h4>Aryan Deogade</h4>
+                </a>
+                    <span>RCOEM's Sportsperson of the Year 2023</span>
+                </div>
+            </div>
+            <div class="gallery-card" data-aos="zoom-in">
+                <img src="assets\img\Aryan Deogade 6th.jpeg" alt="Event 2">
+                <div class="card-text">
+                    <a href="assets\img\Aryan Deogade 6th.jpeg" target="_blank">
+                    <h4>Aryan Deogade</h4>
+                </a>
+                    <span>Best All-rounder in DNC Cricket Tournament</span>
+                </div>
+            </div>
+            <div class="gallery-card" data-aos="zoom-in">
+                <img src="assets\img\Aryan Deogade 7th.jpeg" alt="Event 2">
+                <div class="card-text">
+                    <a href="assets\img\Aryan Deogade 7th.jpeg" target="_blank">
+                    <h4>Aryan Deogade</h4>
+                </a>
+                    <span>7th prize in All India Below 1600 rating chess tournament</span>
+                </div>
+            </div>
+            <div class="gallery-card" data-aos="zoom-in">
+                <img src="assets\img\Aryan Deogade 8th.jpeg" alt="Event 2">
+                <div class="card-text">
+                    <a href="assets\img\Aryan Deogade 8th.jpeg" target="_blank">
+                    <h4>Aryan Deogade</h4>
+                </a>
+                    <span>Represented RTMNU in West Zone Inter-University Chess Tournament 2025</span>
+                </div>
+            </div>
+            
+        </div>
+        
+        
+    </section>
+    
+    <section class="scrolling-photos">
+        <h2 data-aos="fade-left">Ongoing Highlights</h2>
+        <div class="photo-track">
+            <img src="assets\img\Maithili khuje 1st.jpeg" alt="Highlight 1">
+            <img src="assets\img\Aryan Deogade 5th.jpeg" alt="Highlight 2">
+            <img src="assets\img\Sarah.jpeg" alt="Highlight 3">
+            <img src="assets\img\Shraddha Allewar 2nd.jpeg" alt="Highlight 4">
+            <img src="assets\img\Maithili khuje 1st.jpeg" alt="Highlight 1">
+            <img src="assets\img\Aryan Deogade 5th.jpeg" alt="Highlight 2">
+            <img src="assets\img\Sarah.jpeg" alt="Highlight 3">
+            <img src="assets\img\Shraddha Allewar 2nd.jpeg" alt="Highlight 4">
+            <img src="assets\img\Maithili khuje 1st.jpeg" alt="Highlight 1">
+            <img src="assets\img\Aryan Deogade 5th.jpeg" alt="Highlight 2">
+            <img src="assets\img\Sarah.jpeg" alt="Highlight 3">
+            <img src="assets\img\Shraddha Allewar 2nd.jpeg" alt="Highlight 4">
+        </div>
+    </section>
+
+    <footer data-aos="fade-up">
+        <p>&copy; 2025 ECE Department. All rights reserved.</p>
+    </footer>
+
+    <!-- AOS JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init();
+    </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        AOS.init({
+            once: false, // Animations will repeat if the element is scrolled back into view
+        });
+    });
+</script>
+</body>
+</html>
