@@ -9,9 +9,6 @@
     <!-- CSS here -->
     <link rel="stylesheet" href="assets/css/events.css">
     <link rel="stylesheet" href="assets/css/upcomingevents.css">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 </head>
 <body>
     <header>
@@ -20,7 +17,6 @@
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
-            <a href="photography.html">Achievements</a>
             <a href="contributors.html">Contributors</a>
             <a href="upcomingevents.html">Upcoming Events</a>
         </nav>
@@ -47,6 +43,66 @@
 
     <script>
         const events = [
+        {
+                date: "January 10-12, 2025",
+                title: "EKATRA'25",
+                description: "A vibrant celebration of art, music, dance, and traditions, showcasing creativity and cultural diversity.",
+                images: [
+                    "assets/img/ekatra1.JPG",
+                    "assets/img/cultural1.JPG",
+                    "assets/img/cultural5.JPG"
+                ]
+            },
+            {
+                date: "January 12th, 2025",
+                title: "Cultural Night",
+                description: "An enchanting evening celebrating diverse traditions, art, and cultural expressions through music, dance, and performances.",
+                images: [
+                    "assets/img/cultural.JPG",
+                    "assets/img/cultural2.JPG",
+                    "assets/img/cultural4.JPG"
+                ]
+            },
+            {
+                date: "January 11th, 2025",
+                title: "Musical Event and Open mic",
+                description: "An enchanting Musical Eve and Open Mic night, where talent meets harmony, offering a stage to express, inspire, and celebrate creativity.",
+                images: [
+                    "assets/img/music.jpg",
+                    "assets/img/music1.jpg",
+                    "assets/img/music2.jpg"
+                ]
+            },
+            {
+                date: "January 11th, 2025",
+                title: "Sentient Circuits",
+                description: "Explore the world of intelligent electronics by building and programming interactive circuits in this hands-on bot workshop.",
+                images: [
+                    "assets/img/sentient.JPG",
+                    "assets/img/sentient1.JPG",
+                    "assets/img/sentient2.JPG"
+                ]
+            },
+            {
+                date: "January 11th, 2025",
+                title: "Installation Ceremony",
+                description: "An enchanting rite of passage, where tradition meets new beginnings, illuminating the path to a promising journey ahead",
+                images: [
+                    "assets/img/installation.jpg",
+                    "assets/img/installation1.jpg",
+                    "assets/img/installation2.jpg"
+                ]
+            },
+            {
+                date: "January 10th & 12th, 2025",
+                title: "Mr. and Miss. EC",
+                description: "Where brilliance meets elegance, Mr. and Miss EC embody the perfect fusion of intellect, charm, and charisma.",
+                images: [
+                    "assets/img/mrnmiss.JPG",
+                    "assets/img/mrnmiss1.JPG",
+                    "assets/img/cultural3.JPG"
+                ]
+            },
             {
                 date: "December 18-20, 2024",
                 title: "IETE X Communique",
@@ -84,7 +140,7 @@
                 images: [
                     "assets/img/ecpl231.JPG",
                     "assets/img/ecpl232.JPG",
-                    "assets/img/ecpl234.jpg"
+                    "assets/img/ecpl233.JPG"
                 ]
             },
             {
@@ -173,13 +229,6 @@
         document.addEventListener("DOMContentLoaded", () => {
             renderTimeline();
             renderGallery();
-        });
-    </script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            AOS.init({
-                once: false, // Animations will repeat if the element is scrolled back into view
-            });
         });
     </script>
 </body>
