@@ -430,7 +430,133 @@ section {
 .feedback-link:hover {
     background-color: #0056b3;
 }
+/* Magazine Section */
+/* Magazine Section */
+.magazine-section {
+    padding: 60px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #121212, #1f1f1f); /* Dark theme background */
+    color: white;
+    overflow: hidden;
+}
 
+.magazine-section h2 {
+    font-size: 2.8rem;
+    color:rgba(179, 0, 255, 0.5); /* Neon pink */
+    text-transform: uppercase;
+    text-shadow: 0px 0px 10px rgba(179, 0, 255, 0.5);
+    animation: fadeInUp 1.5s ease-out;
+}
 
+.magazine-section p {
+    font-size: 1.2rem;
+    color: #bbb;
+    margin-bottom: 30px;
+    animation: fadeInUp 1.8s ease-out;
+}
 
-    
+/* Magazine Container */
+.magazine-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    animation: fadeInUp 2s ease-out;
+}
+
+/* Magazine Card */
+.magazine-card {
+    width: 260px;
+    height: 350px;
+    position: relative;
+    perspective: 1000px; /* Enables 3D effect */
+}
+
+.magazine-card-inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.magazine-card:hover .magazine-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Front & Back Faces */
+.magazine-card-front, .magazine-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(179, 0, 255, 0.5);
+    backface-visibility: hidden;
+}
+
+/* Front Side (Magazine Cover) */
+.magazine-card-front {
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    border: 2px solid #ee00ff;
+    transition: box-shadow 0.5s;
+}
+
+.magazine-card-front:hover {
+    box-shadow: 0px 0px 30px rgba(251, 0, 255, 0.8);
+}
+
+/* Back Side (Magazine Details) */
+.magazine-card-back {
+    background: rgba(20, 20, 20, 0.9);
+    color: white;
+    text-align: center;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    border: 2px solid #ff00f7;
+}
+
+.magazine-card-back h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #f200ff;
+}
+
+.magazine-card-back p {
+    font-size: 1rem;
+    color: #bbb;
+    margin-bottom: 15px;
+}
+
+/* View PDF Button */
+.view-magazine {
+    background: linear-gradient(135deg, #ff007f, #ff4d00);
+    color: white;
+    padding: 10px 15px;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.view-magazine:hover {
+    background: linear-gradient(135deg, #ff4d00, #ff007f);
+    transform: scale(1.1);
+}
+
+/* Fade-in Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

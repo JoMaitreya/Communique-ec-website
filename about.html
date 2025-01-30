@@ -27,106 +27,12 @@
     <link rel="stylesheet" href="assets/css/testinomialeff.css">
     <link rel="stylesheet" href="assets/css/about.css">
     <link rel="stylesheet" href="assets/css/Nav.css">
-
+    <link rel="stylesheet" href="assets/css/about.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: white;
-            color: black;
-        }
-        .section {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            padding: 12px;
-            margin: 4px 0;
-            flex-wrap: wrap;
-        }
-        .section:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-        .text-box {
-            flex: 1;
-            padding: 20px;
-        }
-        .text-box h2 {
-            font-size: 2em;
-            margin-bottom: 10px;
-        }
-        .text-box p {
-            font-size: 1.2em;
-            line-height: 1.5;
-        }
-        .image-box {
-            flex: 1;
-            text-align: center;
-        }
-        .image-box img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
-
-
-
-
-        
-        .container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 20px;
-            
-        }
-        .text-content {
-            flex: 1;
-            padding: 20px;
-        }
-        h2 {
-            color: #D063E6;
-            font-size: 28px;
-            font-weight: bold;
-        }
-        p {
-            font-size: 16px;
-            line-height: 1.6;
-        }
-        .bullet-points {
-            list-style-type: circle;
-            color: #D063E6;
-            padding-left: 20px;
-        }
-        .image-container {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .image-container img {
-            width: 80%;
-            border-radius: 50%;
-            padding: 10px;
-        }
-       
-        
-        
-
-        
-        
-
-
-
-        
-        
-    
-    </style>
+   
     
 </head>
 
@@ -296,7 +202,19 @@
         </div>
     </div>
 </section>
+<section class="magazine-showcase">
+    <h2>📖 Explore Communique Magazines</h2>
+    <p>Scroll through the latest editions and dive into our digital library.</p>
 
+    <div class="magazine-slider">
+        <div class="magazine-track" id="magazineTrack">
+            <!-- Magazines will be added dynamically here -->
+        </div>
+    </div>
+
+    <button class="scroll-btn left" onclick="scrollLeft()">⬅</button>
+    <button class="scroll-btn right" onclick="scrollRight()">➡</button>
+</section>
 
            
       
@@ -361,7 +279,54 @@
   <div id="back-top" >
     <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
 </div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const magazines = [
+    {
+            title: "Communique Magazine - Edition 2025",
+            description: "Explore the highlights of 2025!",
+            coverImage: "assets/magzines/Magazine-25.jpeg",
+            pdfLink: "assets/magzines/Magazine-25.pdf"
+        },
+        {
+            title: "Communique Magazine - 2023",
+            coverImage: "assets/magzines/Magazine-23.jpg",
+            pdfLink: "https://acrobat.adobe.com/id/urn:aaid:sc:AP:434d3501-48e3-4aad-a490-5f49a65abe9b"
+        },
+    ];
 
+    const magazineTrack = document.getElementById("magazineTrack");
+
+    magazines.forEach(magazine => {
+        const card = document.createElement("div");
+        card.classList.add("magazine-card");
+
+        card.innerHTML = `
+            <a href="${magazine.pdfLink}" target="_blank">
+                <img src="${magazine.coverImage}" alt="${magazine.title}">
+            </a>
+        `;
+
+        magazineTrack.appendChild(card);
+    });
+});
+
+/* Scroll Functions */
+function scrollLeft() {
+    document.querySelector(".magazine-slider").scrollBy({
+        left: -300,
+        behavior: "smooth"
+    });
+}
+
+function scrollRight() {
+    document.querySelector(".magazine-slider").scrollBy({
+        left: 300,
+        behavior: "smooth"
+    });
+}
+
+</script>
 <!-- JS here -->
 <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
 <!-- Jquery, Popper, Bootstrap -->
