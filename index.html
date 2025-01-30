@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="assets/css/slick.css">
     <link rel="stylesheet" href="assets/css/nice-select.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/Nav.css">
+    
 	<link rel="stylesheet" href="assets/css/style1.css">
     
     
@@ -107,6 +107,15 @@
         </div>
     </div>
 </section>
+<section id="magazine" class="magazine-section">
+    <h2>📖 Communique Magazine</h2>
+    <p>Explore our latest edition of the Communique Magazine</p>
+
+    <div class="magazine-container" id="magazineContainer">
+        <!-- Magazines will be dynamically added here -->
+    </div>
+</section>
+
 
 <section id="about">
     <h2 class="section-title">What is Communique?</h2>
@@ -428,7 +437,44 @@
 <!--<button class="feedback-button" id="feedbackButton">Give Feedback</button>-->
 
 <a href="feedback.html" class="feedback-button">Give Feedback</a>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const magazines = [
+    {
+            title: "Communique Magazine - Edition 2025",
+            description: "Explore the highlights of 2025!",
+            coverImage: "assets/magzines/Magazine-25.jpeg",
+            pdfLink: "assets/magzines/Magazine-25.pdf"
+        }
+    ];
 
+    const magazineContainer = document.getElementById("magazineContainer");
+
+    magazines.forEach(magazine => {
+        const card = document.createElement("div");
+        card.classList.add("magazine-card");
+
+        card.innerHTML = `
+            <div class="magazine-card-inner">
+                <!-- Front Side -->
+                <div class="magazine-card-front" style="background-image: url('${magazine.coverImage}');">
+                </div>
+
+                <!-- Back Side -->
+                <div class="magazine-card-back">
+                    <h3>${magazine.title}</h3>
+                    <p>${magazine.description}</p>
+                    <a href="${magazine.pdfLink}" class="view-magazine" target="_blank">📖 Read Now</a>
+                </div>
+            </div>
+        `;
+
+        magazineContainer.appendChild(card);
+    });
+});
+
+
+</script>
 
 
 <script>
